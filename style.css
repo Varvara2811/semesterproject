@@ -22,7 +22,7 @@ body{
 width: 1212px;
 margin: 0 auto;
 padding-top: 0 15px;
-/* outline: 1px solid red; */
+outline: 1px solid red;
 }
                               /* HEADER */
 .header .container{
@@ -47,7 +47,7 @@ line-height: 1.3;
 letter-spacing: -1.2px;
 }
 .header-list{
-    display: flex;
+  display: none;
     gap: 40px;
 }
 .header-link{
@@ -82,6 +82,7 @@ position: relative;
     opacity: 1;
 }
 .header-button{
+    display: none;
     background-color: var(--active-color);
     padding: 12px 32px;
     border-radius: 9999px;
@@ -112,8 +113,8 @@ transform: scale(1);
 }
                         /* SECTION HERO */
 .hero{
-    padding-top: 160px;
-    padding-bottom: 160px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     background:var(--hero-bg);
 }
 .hero .container{
@@ -137,11 +138,11 @@ margin-top: 32px;
 }
 .hero-title{
     align-self: stretch;
-    font-size: 120px;
+      font-size: 80px;
 font-weight: 700;
-line-height: 0.97;
+line-height: 0.77;
 letter-spacing: -6.4px;
-width: 670.7px;
+width: 320.7px;
 color: var(--title-color);
 }
 .hero-span{
@@ -153,7 +154,7 @@ font-family: "Be Vietnam Pro";
 font-size: 24px;
 font-weight: 300;
 line-height: 1.33;
-width: 519.3px;
+width: 276.3px;
 }
 .hero-btn{
     margin-top: 32px;
@@ -193,6 +194,8 @@ animation: BigElement 850ms ease;
     animation-duration: 1000ms;
 }
 .hero-img1{
+    display: none;
+    visibility: hidden;
 position: absolute;
 top: -50px;
 right: 50px;
@@ -204,7 +207,9 @@ transition-duration: 700ms;
     transform: rotate(-5deg);
 }
 .hero-img2{
-    position: absolute;
+     display: none;
+     visibility: hidden;
+ position: absolute;
     top: 300px;
 right: 300px;
 transform: transform;
@@ -229,12 +234,25 @@ transform: scale(1.2);
                          /* SECTION ABOUT */
 .about{
     background-color: var(--bcc-section);
-    padding-top: 128px;
-    padding-bottom: 128px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .about .container{
+margin: 0 auto;
+display: grid;
+row-gap: 80px;
+column-gap: 80px;
+align-self: stretch;
+grid-template-rows: 736px;
+grid-template-columns: repeat(2,minmax(0,1fr));
+}
+.box{
 display: flex;
-gap: 80px;
+flex-direction: column;
+align-items: flex-start;
+gap: 39px;
+grid-column: 1 / span 1;
+justify-self: stretch;
 }
 .about-title{
     align-self: stretch;
@@ -253,8 +271,7 @@ font-size: 20px;
 font-weight: 300;
 line-height: 1.62;
 width: 534.6px;
-margin-bottom: 39px;
-margin-top: 39px;
+
 }
 .about-subtitle{
 color: var(--title-color);
@@ -315,13 +332,11 @@ gap: 16px;
     background-color: var(--accent-color);
 }
 .about-img{
-    width: 552.0px;
-height: 736.0px;
 align-self: stretch;
-aspect-ratio: 3/4;
 border-radius: 48px;
 background: rgba(255, 255, 255, 0.00);
 box-shadow: 0 25px 50px -12px rgba(141, 74, 0, 0.05);
+grid-column: 1 / span 1;
 }
                         /* SECTION PRODUCT */
 .products{
@@ -891,4 +906,81 @@ border-radius: 32px;
 
 h4{
     margin-top:36px;
+}
+ 
+
+/* МОБІЛКА */
+@media (min-width: 480px){
+.container{
+width: 480px;
+}
+.hero .container{
+width: 480px;
+}
+
+}
+
+/* ПЛАНШЕТ */
+@media (min-width: 768px){
+.container{
+width: 768px;
+}
+.header-list{
+  display: flex;
+  gap: 20px;
+}
+.header-button{
+    display: block;
+}
+.hero .container{
+width: 768px;
+}
+.hero{
+    padding-top: 74px;
+    padding-bottom: 74px;
+}
+.hero-title{
+    font-size: 120px;
+font-weight: 700;
+line-height: 0.97;
+width: 670.7px;
+}
+.hero-subtitle{
+width: 519.3px;
+}
+.about{
+    padding-top: 74px;
+    padding-bottom: 74px;
+}
+.about .container{
+gap: 45px;
+}
+}
+/* ДЕСТОП */
+@media (min-width: 1200px){
+.container{
+width: 1200px;
+}
+.hero .container{
+width: 1200px;
+}
+.hero{
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+.hero-img2{
+ display: block;
+ visibility: visible;
+}
+.hero-img1{
+    display: block;
+    visibility: visible;
+}
+.about{
+    padding-top: 128px;
+    padding-bottom: 128px;
+}
+.about .container{
+gap: 80px;
+}
 }
